@@ -1,0 +1,61 @@
+{
+  "atlas": {
+    "title": "Visual Atlas",
+    "version": "0.1.0",
+    "updated": "2026-09-25",
+    "note": "Demo objects show the MVP structure. Replace them with real records."
+  },
+  "objects": [
+    {
+      "id": "RAD-001",
+      "title": "Radiolarian Study",
+      "kind": "specimen",
+      "date": "2026-09-25",
+      "status": "sketched",
+      "public": true,
+      "demo": true,
+      "summary": "Demo specimen record for a microscopy-driven structural study.",
+      "visualQuestion": "How irregular can radial structure become before the eye stops reading it as radial?",
+      "observation": "Use this field for one precise thing learned by looking or making.",
+      "materials": ["graphite", "watercolor"],
+      "tags": ["radiolaria", "microscopy", "radial structure"],
+      "source": {
+        "label": "Add scientific or museum source",
+        "url": null
+      },
+      "relations": ["MAT-001"]
+    },
+    {
+      "id": "MAT-001",
+      "title": "Mixed Media Paper Test",
+      "kind": "material-test",
+      "date": "2026-09-25",
+      "status": "tested",
+      "public": true,
+      "demo": true,
+      "summary": "Demo record for testing how one surface behaves across several layers.",
+      "visualQuestion": "Which sequence preserves crisp graphite while accepting a transparent watercolor wash?",
+      "observation": "Record edge quality, lifting, buckling, granulation, scan behavior, and anything worth repeating.",
+      "materials": ["mixed media paper", "graphite", "watercolor"],
+      "tags": ["paper", "surface", "layering"],
+      "source": null,
+      "relations": ["RAD-001"]
+    },
+    {
+      "id": "OBS-001",
+      "title": "Frosted Window",
+      "kind": "observation",
+      "date": "2026-09-25",
+      "status": "observed",
+      "public": true,
+      "demo": true,
+      "summary": "Demo field observation: a small visual fact that may later become a material or structural experiment.",
+      "visualQuestion": "Can condensation and crystal growth be translated into a controlled boundary system?",
+      "observation": "Small observations belong here even when they never become finished artworks.",
+      "materials": [],
+      "tags": ["ice", "branching", "boundary"],
+      "source": null,
+      "relations": []
+    }
+  ]
+}

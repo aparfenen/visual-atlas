@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aparfenen/visual-atlas/schema/object.schema.json",
+  "title": "Visual Atlas Object",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "kind",
+    "date",
+    "status",
+    "public",
+    "summary",
+    "visualQuestion",
+    "observation",
+    "materials",
+    "tags",
+    "relations"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]*-[0-9]{3,}$",
+      "description": "Stable human-readable identifier such as RAD-001 or OBS-001."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "specimen",
+        "work",
+        "experiment",
+        "material-test",
+        "palette",
+        "reference",
+        "observation",
+        "series"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "referenced",
+        "sketched",
+        "tested",
+        "developing",
+        "finished",
+        "published",
+        "stopped"
+      ]
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "demo": {
+      "type": "boolean"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "visualQuestion": {
+      "type": "string"
+    },
+    "observation": {
+      "type": "string"
+    },
+    "materials": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "source": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["label", "url"],
+          "properties": {
+            "label": { "type": "string" },
+            "url": {
+              "oneOf": [
+                { "type": "null" },
+                { "type": "string", "format": "uri" }
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "relations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

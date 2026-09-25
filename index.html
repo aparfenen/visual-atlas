@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A visual research atlas for specimens, works, experiments, materials, palettes, references, and observations.">
+  <title>Visual Atlas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">APARFENEN / VISUAL RESEARCH</p>
+      <h1>Visual Atlas</h1>
+      <p class="lede">A record of what was observed, tested, made, and learned.</p>
+    </div>
+    <div class="header-meta" aria-label="Atlas summary">
+      <span id="object-count">0 objects</span>
+      <span id="public-count">0 public</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Atlas controls">
+      <label class="search">
+        <span>Search</span>
+        <input id="search-input" type="search" placeholder="radiolaria, paper, graphite…" autocomplete="off">
+      </label>
+      <div class="filter-row" id="kind-filters" aria-label="Filter by type"></div>
+    </section>
+
+    <section class="atlas-grid" id="atlas-grid" aria-live="polite"></section>
+    <p id="empty-state" class="empty-state" hidden>No objects match this view.</p>
+  </main>
+
+  <dialog id="object-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="Close">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <footer>
+    <span>Observe → Reference → Experiment → Work → Series</span>
+    <span>Data lives in <code>data/atlas.json</code></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
