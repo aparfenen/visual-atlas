@@ -22,7 +22,7 @@ const escapeHtml = (value = "") =>
   }[ch]));
 
 const prettyKind = kind =>
-  kind.replace(/-/g, " ").replace(/w/g, c => c.toUpperCase());
+  kind.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 
 function searchable(object) {
   return [
